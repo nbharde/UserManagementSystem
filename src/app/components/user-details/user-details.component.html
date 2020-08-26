@@ -1,0 +1,31 @@
+<div class="example-container mat-elevation-z8">
+    <h2>Users Details</h2>
+    <div class="example-loading-shade"
+         *ngIf="isLoading">
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+    <div class="button-row" *ngIf="isAdmin">
+      <a mat-flat-button color="primary" [routerLink]="['/users']"><mat-icon>list</mat-icon></a>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title><h2>{{users.username}}</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <dl>
+          <dt>Name:</dt>
+          <dd>{{users.name}}</dd>
+          <dt>Email:</dt>
+          <dd>{{users.email}}</dd>
+          <dt>City:</dt>
+          <dd>{{users.city}}</dd>
+          <dt>Country:</dt>
+          <dd>{{users.country}}</dd>
+        </dl>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button color="primary" [routerLink]="['/edit-user', users.id]"><mat-icon>edit</mat-icon> Users</a>
+        <a mat-flat-button color="warn"  *ngIf="isAdmin" (click)="deleteUser(users.id)"><mat-icon>delete</mat-icon> Users</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>

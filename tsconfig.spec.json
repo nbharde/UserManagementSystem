@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "allowJs": true,
+    "types": [
+      "jest", // 1
+      // "node"
+    ],
+    "module": "commonjs",
+    "esModuleInterop": true, // 2
+    "emitDecoratorMetadata": true // 3
+  },
+  "files": [
+    "setupJest.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}

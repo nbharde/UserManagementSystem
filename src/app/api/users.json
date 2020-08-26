@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "username": "admin01",
+      "email": "admin@email.com",
+      "password": "admin",
+      "city": "Dubai",
+      "country": "UAE",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Brian",
+      "username": "brian01",
+      "email": "brian@email.com",
+      "password": "brian",
+      "city": "Mumbai",
+      "country": "India",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "Nilson",
+      "username": "nilson01",
+      "email": "nilson@email.com",
+      "password": "nilson",
+      "city": "Abudhabi",
+      "country": "UAE",
+      "role": "user"
+    },
+    {
+      "username": "naziya01",
+      "name": "Naziya",
+      "email": "naziya@email.com",
+      "password": "naziya",
+      "city": "Thane",
+      "country": "India",
+      "role": "user",
+      "id": 4
+    }
+  ]
+}

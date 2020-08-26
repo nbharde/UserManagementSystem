@@ -1,0 +1,68 @@
+<div class="example-container mat-elevation-z8">
+    <h2>Edit Users</h2>
+    <div class="example-loading-shade"
+          *ngIf="isLoading">
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <a mat-flat-button color="primary" (click)="usersDetails()"><mat-icon>info</mat-icon></a>
+    </div>
+    <mat-card class="example-card">
+      <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username"
+                  [errorStateMatcher]="matcher">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" formControlName="name"
+                  [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!userForm.get('name').valid && userForm.get('name').touched">Please enter Name</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email"
+                  [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!userForm.get('email').valid && userForm.get('email').touched">Please enter Email Address</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password"
+                  [errorStateMatcher]="matcher">
+          <mat-icon matSuffix class="eye-icon" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error>
+            <span *ngIf="!userForm.get('password').valid && userForm.get('password').touched">Please enter Password</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="City" formControlName="city"
+                  [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!userForm.get('city').valid && userForm.get('city').touched">Please enter City</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Country</mat-label>
+          <input matInput placeholder="Country" formControlName="country"
+                  [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!userForm.get('country').valid && userForm.get('country').touched">Please enter Country</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" style="visibility: hidden;">
+          <mat-label>Role</mat-label>
+          <input matInput placeholder="Role" formControlName="role"
+                  [errorStateMatcher]="matcher">
+        </mat-form-field>
+        <div class="button-row">
+          <button type="submit" [disabled]="!userForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
