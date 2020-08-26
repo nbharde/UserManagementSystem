@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "api": "json-server src/app/api/users.json --no-cors=true --middlewares src/server.ts",
-    "server": "node src/server.ts"
+    "server": "node src/server.ts",
+    "compodoc": "./node_modules/.bin/compodoc -p ./tsconfig.app.json"
   },
   "private": true,
   "type": "module",
@@ -41,6 +42,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/jest": "^26.0.10",
     "codelyzer": "^6.0.0",
+    "compodoc": "0.0.41",
     "jest": "^26.4.2",
     "jest-preset-angular": "^8.3.1",
     "protractor": "~7.0.0",
